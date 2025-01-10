@@ -2,23 +2,22 @@
 
 :root {
   --dark-color: #000;
+  --nav-bg-color: rgba(33, 33, 33, 0.9); /* Slightly transparent black */
+  --nav-button-color: #ff6f91; /* Light pinkish red */
+  --nav-button-hover: #ff1e56; /* Vibrant red */
+  --nav-text-color: #fff; /* White text */
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: #f5f5f5;
   margin: 0;
-}
-
-h1,
-h2,
-h3 {
-  font-family: "Playfair Display", serif;
-  font-weight: bold;
 }
 
 .night {
@@ -65,33 +64,62 @@ h3 {
 }
 
 .nav {
-  height: 70px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(20, 20, 20, 0.9); /* Semi-transparent dark background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+  padding: 10px 0;
+  z-index: 10;
+}
+
+.nav ul {
+  list-style: none;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: transparent;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
 }
 
-.nav-button {
-  background-color: #6fbf8b; /* Light cyan/teal */
-  color: white; /* Text color */
-  border-radius: 20px;
-  height: 50%;
-  width: 10%;
-  transition: all 0.7s ease, transform 0.5s ease;
-  border: transparent;
-  position: sticky;
+.nav ul li {
+  display: inline;
 }
 
-.nav-button:hover {
-  transform: scale(1.2);
-  background-color: #4a9a74;
+.nav ul li a {
+  text-decoration: none;
+  color: #f0a6d8; /* Romantic light pink */
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1); /* Subtle highlight */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Glowy border */
 }
 
+.nav ul li a:hover {
+  background: rgba(240, 160, 216, 0.8); /* Glow effect */
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0px 8px 12px rgba(240, 160, 216, 0.5); /* Highlight shadow */
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.section h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
 .container {
   display: flex;
   justify-content: center;
-  margin-top: 5%;
+  margin-top: 80px; /* Ensure content doesn't overlap the nav */
+  flex-wrap: wrap;
 }
 
 .container img {
@@ -102,32 +130,10 @@ h3 {
   border: 1px solid white;
   transition: all ease-in-out 0.5s;
   margin: 0.2%;
-  opacity: 60%;
+  filter: brightness(50%);
 }
 
 .container img:hover {
   width: 20%;
-  opacity: 100%;
-}
-.fixed-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  font-weight: bolder;
-  height: 50px;
-  width: 50px;
-  background-color: #6fbf8b;
-  font-family: "Bangers", sans-serif;
-  font-size: 3rem;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  cursor: pointer;
-  transition: all ease-in-out 0.5s;
-  color: white;
-}
-.fixed-button:hover{
-    background-color:#4a9a74;
-    transform: scale(1.1);
+  filter: brightness(100%);
 }
