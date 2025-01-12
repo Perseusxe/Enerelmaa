@@ -244,3 +244,8 @@ header h2 {
   height: 300px;
   border-radius: 10px;
 }
+.songs {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
