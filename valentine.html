@@ -164,5 +164,46 @@
           loading="lazy"></iframe>
       </div>
     </section>
+
+    <!-- Envelope and Modal -->
+    <div class="envelope-container">
+      <div class="envelope" onclick="openModal()">✉️</div>
+    </div>
+
+    <!-- Modal -->
+    <div id="letterModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <textarea
+        placeholder="Hello, my love Enerelmaa,
+
+        We're doing long distance this year, and while it's tough, I know we'll get through it together. I love reading you stories at night because it makes me dream about our future and all the beautiful moments we’ll share.
+        
+        I'm truly sorry for every mistake I've made—the times I hurt you, made you cry, or made you feel anything less than loved. I hope you can forgive me. Even though I’m not by your side today, I hope you have a wonderful Valentine’s Day.
+        
+        With all my love,
+        Erkhes"
+          readonly></textarea>
+      </div>
+    </div>
   </body>
 </html>
+<script>
+  // Function to open the modal
+  function openModal() {
+    document.getElementById("letterModal").style.display = "block";
+  }
+
+  // Function to close the modal
+  function closeModal() {
+    document.getElementById("letterModal").style.display = "none";
+  }
+
+  // Close modal if user clicks outside of it
+  window.onclick = function (event) {
+    const modal = document.getElementById("letterModal");
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
